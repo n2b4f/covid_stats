@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private List<ListItemClass> arrayList;
     private OneObjectEx1 one_element;
     private TextView text_no_connection;
+    private TextView text_of_place;
     private boolean internet_connect;
     private boolean internet_connect2;
     ConnectionDec cd;
@@ -42,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
         text_no_connection.setText("Соединение с сайтом, подождите");
         internet_connect = connection_check_second();
         internet_connect2 = false;
+        text_of_place = findViewById(R.id.textView_name);
         init();
 
 
     }
 
     public void click_world(View view){
+        text_of_place.setText("Страна");
         if (internet_connect2) {
             arrayList.clear();
             adapter.notifyDataSetChanged();
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click_russia(View view){
+        text_of_place.setText("Город");
         if (internet_connect2) {
             arrayList.clear();
             adapter.notifyDataSetChanged();
